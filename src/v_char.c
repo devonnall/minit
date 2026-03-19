@@ -13,7 +13,7 @@ int v_char_concat(v_char *dst, const char *src, int size) {
         dst->str = new_str;
     }
     strncat(dst->str, src, size);
-    dst->size += size;
+    dst->size = strlen(dst->str);
     return 0;
 }
 

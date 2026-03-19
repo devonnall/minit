@@ -59,4 +59,9 @@ dkms.conf
 # Build directories
 build/
 dist/
+bin/
 out/
+
+.DS_Store
+.vscode/
+.minit/
