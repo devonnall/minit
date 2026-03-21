@@ -12,5 +12,5 @@ all: build
 build: src/main.c
 	$(CC) $(CFLAGS) $(LDFLAGS) -o bin/main $(SRCS)
 
-test: test/test_all.c
+test: $(TST_SRCS)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o bin/test $(TST_SRCS) 
