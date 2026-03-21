@@ -16,7 +16,7 @@ void test_file_exists() {
 }
 
 void test_get_relative_path() {
-    const char in_root[] = "test.txt";
+    const char in_root[] = "test/files/empty.txt";
     char *path_one = NULL;
     assert(get_file_path(in_root, &path_one) == 0);
 

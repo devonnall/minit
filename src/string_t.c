@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "vchar.h"
+#include "string_t.h"
 
-int v_char_concat(v_char *dst, const char *src, int size) {
+int string_t_concat(string_t *dst, const char *src, int size) {
     if (dst->capacity <= dst->size) {
         dst->capacity = dst->capacity * 2;
         char *new_str = realloc(dst->str, dst->capacity);
@@ -17,15 +17,15 @@ int v_char_concat(v_char *dst, const char *src, int size) {
     return 0;
 }
 
-v_char *v_char_init() {
-    v_char *arr = (v_char*)malloc(sizeof *arr);
+string_t *string_t_init() {
+    string_t *arr = (string_t*)malloc(sizeof *arr);
     arr->str = malloc(BUFSIZ * sizeof(char));
     arr->size = 0;
     arr->capacity = BUFSIZ;
     return arr;
 }
 
-void v_char_free(v_char *arr) {
+void string_t_free(string_t *arr) {
     free(arr->str);
     free(arr);
 }
