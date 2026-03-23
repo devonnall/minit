@@ -1,11 +1,9 @@
 #ifndef UTILITY_H
 #define UTILITY_H
 
-#include "string_t.h"
+#define MAX_FILE_SIZE 100000
 
-int read_file(char *path, string_t *content, int *n_digits);
-int prepend(char *first, char *second, char **dst);
-int create_directory(char *root, char *name, char **path);
-int create_directories(char *root, char **names, int n);
+int read_file(const char *path, char *content);
+void get_digit_count(int n, int *num_digits);
 
 #endif
