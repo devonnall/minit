@@ -28,11 +28,10 @@ int get_absolute_root(char *current_dir, char *marker_path) {
     return -1;
 }
 
-int get_file_path(const char *filename, char **path) {
+int get_file_path(const char *filename, char *path) {
     char abs_path[PATH_MAX];
     char current_dir[PATH_MAX];
     char marker_path[PATH_MAX];
-    *path = malloc(PATH_MAX * sizeof(char));
 
     if (realpath(filename, abs_path) == NULL) {
         perror("realpath");
@@ -47,6 +46,7 @@ int get_file_path(const char *filename, char **path) {
 
     char *parent = strrchr(current_dir, '/');
     if (!parent) return -1;
-    snprintf(*path, PATH_MAX, ".%s%s\n", parent, abs_path + strlen(current_dir));
+    snprintf(path, PATH_MAX, ".%s", abs_path + strlen(current_dir));
+
     return 0;
 }

@@ -1,18 +1,9 @@
-#ifndef ADD_H
-#define ADD_H
+// #ifndef ADD_H
+// #define ADD_H
 
-#include "uthash.h"
-#include "vchar.h"
-#include "cvector.h"
+// #include "hash.h"
 
-struct file {
-    char *content;
-    cvector(char*) paths;
-    UT_hash_handle hh;
-};
+// int split_object_hash(struct blob_object *blob, char **dir, char **file);
+// int add_file(string_t *file);
 
-v_char *read_file_content(char*);
-
-int add_file(struct file **files, char*);
-
-#endif
+// #endif
